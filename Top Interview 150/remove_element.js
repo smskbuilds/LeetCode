@@ -60,8 +60,7 @@ function removeElement(nums, val) {
     for (let i = 0; i < filteredNums.length; i++) {
         nums[i] = filteredNums[i];
     }
-    console.log(k);
-    console.log(nums);
+    return k;
 }
 
 removeElement(testNums, testVal);
