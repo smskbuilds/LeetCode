@@ -39,4 +39,26 @@ Note: This question is the same as 2287: Rearrange Characters to Make Target Str
  * @return {number}
  */
 
-function maxNumberOfBalloons(text) {}
+function maxNumberOfBalloons(text) {
+    const letterCounter = new Map();
+    for (const letter of text) {
+        letterCounter.set(letter, (letterCounter.get(letter) || 0) + 1);
+    }
+    let goalText = 'balloon';
+    let ans = 0;
+    let i = 0;
+    while (true) {
+        if (i >= goalText.length) {
+            i = 0;
+            ans++;
+        }
+        if (!letterCounter.get(goalText[i])) {
+            break;
+        }
+        letterCounter.set(goalText[i], letterCounter.get(goalText[i]) - 1);
+        i++;
+    }
+    return ans;
+}
+
+console.log(maxNumberOfBalloons('ballon'));
