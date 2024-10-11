@@ -55,6 +55,15 @@ Each arrivali time is distinct.
  * @return {number}
  */
 
+/* 
+
+My solution doesn't end up working because I am not taking into account the fact that
+when someone gets up from a chair everyone in a later chair does not slide down to
+get rid of any empty chairs. I think learning about priority queues
+will help with this problem!
+
+*/
+
 function smallestChair(times, targetFriend) {
     let targetFriendArray = times[targetFriend];
     times = times.sort((a, b) => a[0] - b[0]);
